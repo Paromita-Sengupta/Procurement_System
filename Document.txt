@@ -1,5 +1,11 @@
+A procurement system has been developed for the purchasing department. The intended use
+of the system is to allow staff in any department to easily search for a component and view a
+list of approved suppliers for that component. Purchasing staff, as administrators of the
+system, maintain the list of components, and suppliers.
 
-For this assignment, models.py, admin.py and supplier_list.html files have been modified.
+Currently the system allows us to store a representative name, and representative email for
+each supplier - however some suppliers have multiple representatives. We would like the
+system to handle multiple representatives and their contact information for a supplier.
 
 * Now, the procurement system handles  multiple representatives and their contact information for a supplier. if we go to Supplier Admin page,
 we can see that some suppliers can hold multiple representatives (Many to many relationship) and their information.
