@@ -1,0 +1,13 @@
+/* hide component field on search form */
+#id_component {
+    display: none;
+}
+label[for=id_component] {
+    display: none;
+}
+.record-list {
+    display: block;
+}
+.record-updated{
+    display: block;
+}

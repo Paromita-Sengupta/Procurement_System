@@ -1,0 +1,38 @@
+
+<!-- Supplier Results -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Approved Suppliers for {{ component }}
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Representative</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for supplier in supplier_results %}
+                    <tr>
+                        <!--   Representative contact is added in lists for multiple representatives -->
+                        <td>{{ supplier.name }}</td>
+                        <td>{{ supplier.get_repname}}</td>
+                        <td>{{ supplier.get_repemail}}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3">No authorized suppliers found.</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.panel-body -->
+</div>
+<!-- / Supplier Results Panel -->

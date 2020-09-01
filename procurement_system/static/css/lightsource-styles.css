@@ -1,0 +1,16 @@
+.lightsource-header {
+    background-color: #008080;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+    color: #fff;
+}
+.panel-default>.panel-heading {
+    background-color: #008080;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #008080;
+}

@@ -1,0 +1,10 @@
+
+For this assignment, models.py, admin.py and supplier_list.html files have been modified.
+
+* Now, the procurement system handles  multiple representatives and their contact information for a supplier. if we go to Supplier Admin page,
+we can see that some suppliers can hold multiple representatives (Many to many relationship) and their information.
+
+* The contact data (Representative's information) can only be maintained by admin staff and to give access only to the user admin to maintain
+the data ReadOnlyField has been used. That field does not allow other users to edit/change/delete it other than just viewing it.
+
+* If we go to the source component page, we may now see list of multiple representative information for a supplier.

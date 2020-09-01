@@ -1,0 +1,45 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_modify  %}
+{% block extrahead %}{{ block.super }}
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/prebuilt/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!--     Lightsource Custom Styles -->
+    <link href="/static/custom/css/lightsource-styles.css" rel="stylesheet" type="text/css">
+    {% for stylesheet in module_stylesheets %}
+    <link href="/static/{{ stylesheet }}" rel="stylesheet" type="text/css">
+    {% endfor %}
+{% url 'admin:jsi18n' as jsi18nurl %}
+{% endblock %}
+{% block extrastyle %}{{ block.super }}
+{% endblock %}
+{% block bodyclass %}{{ opts.app_label }}-{{ opts.object_name.lower }} change-form{% endblock %}
+{% block breadcrumbs %}{% if not is_popup %}
+<div class="breadcrumbs">  
+     <a href="../../">{% trans "Home" %}</a> ›
+     <a href="../">{{ opts.app_label|capfirst|escape }}</a> ›
+     {% trans 'Source Components' %}</div>
+{% endif %}{% endblock %}
+
+{% block content %}
+                <div class="col-lg-8">
+                    
+                    <!-- /.panel -->
+                {% if supplier_results != None %}
+                    {% include "suppliers/includes/supplier_list.html" %}
+                {% endif %}
+                </div>
+
+    <!-- jQuery -->
+    <script src="/static/prebuilt/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/prebuilt/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/prebuilt/dist/js/sb-admin-2.js"></script>
+    {% for script in module_javascripts %}
+    <script src="/static/{{ script }}"></script>
+    {% endfor %}
+{% endblock %}

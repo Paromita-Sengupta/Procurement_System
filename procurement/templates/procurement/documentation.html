@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block main_content_area %}
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Documentation
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="list-group">
+                    <a href="#introduction" class="list-group-item">
+                        <i class="fa fa-info-circle fa-fw"></i> Introduction
+                    </a>
+                    <a href="#adding-data" class="list-group-item">
+                        <i class="fa fa-database fa-fw"></i> Adding Data
+                    </a>
+                    <a href="#supplier-list" class="list-group-item">
+                        <i class="fa fa-th-list fa-fw"></i> Supplier List
+                    </a>
+                    <a href="#api" class="list-group-item">
+                        <i class="fa fa-bolt fa-fw"></i> API
+                    </a>
+                </div>
+                <!-- /.list-group -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2><a name="introduction"></a>Introduction</h2>
+                <p>
+                    This is a very simple component and supplier management system. The intention function of the system
+                    is to maintain a list of components, and the suppliers who are authorised to supply them. Administrative
+                    staff maintain the list of suppliers, components and their associations, while general staff simply
+                    use the from page to look up a component, and see its list of suppliers.
+                </p>
+                <p>
+                    The system is written in Python (v3.6), using the Django framework (v2.1.2). Documentation for Django
+                    is available <a href="https://www.djangoproject.com/">here</a>.
+                </p>
+
+
+                <h2><a name="adding-data"></a>Adding Data</h2>
+                <p>
+                    You can manage the components and suppliers using the
+                    <a href="{% url 'admin:index' %}">django admin panel</a>.
+                </p>
+
+                <h2><a name="supplier-list"></a>Supplier List</h2>
+                <p>
+                    Components and their approved Suppliers can be located under
+                    <a href="{% url 'component-search' %}">source components</a>. From this page you may search for a
+                    component, and then click the Find Suppliers button to display its Suppliers
+                </p>
+
+                <h2><a name="api"></a>API</h2>
+                <p>
+                    A simple REST api is integrated into the system, using the <a href="https://www.django-rest-framework.org/">Django Rest Framework</a>.
+                    It provides a means of querying <a href="{% url 'api-component-list' %}">all components</a> or, by providing an id
+                    in the url, <a href="{% url 'api-component-retrieve' pk=1 %}">a specific component</a>.
+                </p>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+
+
+
+
+{% endblock %}
