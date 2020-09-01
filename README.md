@@ -46,6 +46,7 @@ each supplier - however some suppliers have multiple representatives. It handles
     ```
     You can now access the file api service on your browser by using
     ```
+        http://localhost:8000
         http://localhost:8000/admin
     ```
 
